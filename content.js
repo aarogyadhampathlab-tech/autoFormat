@@ -179,3 +179,4 @@ function addMagicWands() {
 injectStaticHub();
 addMagicWands();
 setInterval(addMagicWands, 2000);
+//  this is need to changed
