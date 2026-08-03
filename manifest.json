@@ -12,7 +12,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["http://192.168.1.143:1081/*"],
       "js": [
         "modules/rules.js",
         "modules/celebration.js",

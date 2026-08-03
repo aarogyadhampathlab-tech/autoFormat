@@ -3,6 +3,7 @@
   const { celebrationEffect } = global.AutoFormatter?.celebration || {};
 
   function injectStaticHub() {
+    if (window.location.origin !== "http://192.168.1.143:1081") return;
     if (document.getElementById("master-static-btn")) return;
 
     const style = document.createElement("style");

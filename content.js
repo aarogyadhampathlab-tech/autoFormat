@@ -5,6 +5,8 @@
   const { injectStaticHub } = global.AutoFormatter?.ui || {};
 
   function init() {
+    if (window.location.origin !== "http://192.168.1.143:1081") return;
+
     if (typeof injectStaticHub === "function") injectStaticHub();
     if (typeof addMagicWands === "function") {
       addMagicWands();
