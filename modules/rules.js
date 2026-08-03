@@ -1,0 +1,78 @@
+(function (global) {
+  const TEST_RULES = {
+    642: { value: "30", hasTrigger: true },
+    210: { value: "PALE YELLOW", isText: true },
+    784: { value: "CLEAR", isText: true },
+    705: { value: "1.020", decimals: 3 },
+    593: { value: "6.0", decimals: 1 },
+    619: { value: "NIL", isText: true },
+    729: { value: "NIL", isText: true },
+    127: { value: "NIL", isText: true },
+    122: { value: "NIL", isText: true },
+    836: { value: "NIL", isText: true },
+    490: { value: "NIL", isText: true },
+    646: { value: "NIL", isText: true },
+    238: { value: "NIL", isText: true },
+    175: { value: "NIL", isText: true },
+    571: { value: "NIL", isText: true },
+
+    390: { decimals: 1 },
+    773: { decimals: 0, comma: true, factor: 1000 },
+    643: { decimals: 2 },
+    597: { decimals: 2, factor: 0.01 },
+    573: { decimals: 1 },
+    559: { decimals: 0, isDLC: true },
+    516: { decimals: 0, pad: true, isDLC: true },
+    544: { decimals: 0, pad: true, isDLC: true },
+    293: { decimals: 0, pad: true, isCalculated: true, isDLC: true },
+    108: { ignore: true },
+    276: { ignore: true },
+    137: { decimals: 0, hasTrigger: true },
+    138: { decimals: 1, isCalculated: true },
+    680: { decimals: 2 },
+    768: { decimals: 2 },
+    220: { decimals: 2, isCalculated: true },
+    798: { decimals: 2, isCalculated: true },
+    629: { decimals: 1, hasTrigger: true },
+    628: { decimals: 1, isCalculated: true },
+    482: { decimals: 1, isCalculated: true },
+    468: { ignore: true },
+    474: { decimals: 2, isCalculated: true },
+    440: { name: "HIV MAIN", isText: true, hasTrigger: true },
+    439: { name: "HIV I", isText: true, value: "NON REACTIVE" },
+    438: { name: "HIV II", isText: true, value: "NON REACTIVE" },
+    397: { name: "HBsAg", isText: true, value: "NON REACTIVE" },
+    401: { name: "HCV", isText: true, value: "NON REACTIVE" },
+  };
+
+  const URINE_FILL_IDS = [
+    "642",
+    "210",
+    "784",
+    "705",
+    "593",
+    "619",
+    "729",
+    "127",
+    "122",
+    "836",
+    "490",
+    "294",
+    "632",
+    "646",
+    "238",
+    "175",
+    "571",
+    "190",
+  ];
+
+  const LINKED_ROW_IDS = {
+    137: ["138"],
+    629: ["628", "468", "482", "474"],
+    440: ["440", "439", "438", "397", "401"],
+    642: URINE_FILL_IDS,
+  };
+
+  global.AutoFormatter = global.AutoFormatter || {};
+  global.AutoFormatter.rules = { TEST_RULES, URINE_FILL_IDS, LINKED_ROW_IDS };
+})(window);

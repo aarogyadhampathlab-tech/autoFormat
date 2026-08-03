@@ -4,6 +4,7 @@
   "version": "1.2",
   "description": "Formats specific lab result inputs",
   "permissions": ["activeTab", "storage"],
+  "host_permissions": ["<all_urls>"],
   "icons": {
     "128": "icon.png"},
   "action": {
@@ -11,8 +12,15 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://192.168.1.143/*"],
-      "js": ["content.js"],
+      "matches": ["<all_urls>"],
+      "js": [
+        "modules/rules.js",
+        "modules/celebration.js",
+        "modules/formatter.js",
+        "modules/trigger-buttons.js",
+        "modules/ui.js",
+        "content.js"
+      ],
       "all_frames": true,
       "run_at": "document_idle"
     }
